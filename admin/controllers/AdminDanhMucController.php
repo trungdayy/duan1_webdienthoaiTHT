@@ -80,7 +80,10 @@ class AdminDanhMucController {
 
             }else{
                 //trả về form và lỗi
-                $danhMuc = ['id' => $id, 'ten_loai' => $ten_loai, 'mota' => $mota];
+                $danhMuc = ['id' => $id, 
+                            'ten_loai' => $ten_loai, 
+                            'mota' => $mota
+                        ];
                 require_once './views/danhmuc/editDanhMuc.php';
             }
         }
