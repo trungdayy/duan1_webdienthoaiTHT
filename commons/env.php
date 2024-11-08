@@ -3,8 +3,8 @@
 // Biến môi trường, dùng chung toàn hệ thống
 // Khai báo dưới dạng HẰNG SỐ để không phải dùng $GLOBALS
 
-define('BASE_URL'       , 'http://localhost/nhom8_DuAn1/nhom8/');
-define('BASE_URL_ADMIN' , 'http://localhost/nhom8_DuAn1/nhom8/admin/');
+define('BASE_URL'       , 'http://localhost/nhom8/THT/');
+define('BASE_URL_ADMIN' , 'http://localhost/nhom8/THT/admin/');
 
 define('DB_HOST'    , 'localhost');
 define('DB_PORT'    , 3306);
