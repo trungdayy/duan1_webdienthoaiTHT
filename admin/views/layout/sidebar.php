@@ -44,6 +44,15 @@
                     </a>
                 </li>
 
+                <li class="nav-item">
+                    <a href="<?= BASE_URL_ADMIN . '?act=sanpham' ?>" class="nav-link">
+                        <i class="nav-icon fas fa-mobile"></i>
+                        <p>
+                            Sản phẩm
+                        </p>
+                    </a>
+                </li>
+
 
                 <li class="nav-item">
                     <a href="<?= BASE_URL_ADMIN . '?act=danhmuc' ?>" class="nav-link">
@@ -54,14 +63,7 @@
                     </a>
                 </li>
 
-                <li class="nav-item">
-                    <a href="<?= BASE_URL_ADMIN . '?act=sanpham' ?>" class="nav-link">
-                        <i class="nav-icon fas fa-mobile"></i>
-                        <p>
-                            Sản phẩm
-                        </p>
-                    </a>
-                </li>
+                
 
                 <li class="nav-item">
                     <a href="<?= BASE_URL_ADMIN . '?act=donhang' ?>" class="nav-link">
