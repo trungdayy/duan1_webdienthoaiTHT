@@ -2,12 +2,20 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+@media (min-width: 1024px) {
+    body {
+        font-size: 18px;
+    }
 }
 .container {
-    max-width: 1280px;
+    /* max-width: 1280px; */
     margin: auto;
     background-color: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+    margin: 0 100px;
+    
 }
 header {
     display: flex;
@@ -15,6 +23,7 @@ header {
     max-height: 100px;
     width: 100%;
     justify-content: space-between;
+    font-weight: bold;
 }
 header img{
     width: 10%;
@@ -29,7 +38,8 @@ header img{
 
 }
 .banner img{
-    width: 100%;
+    max-width: 100%;
+    padding-bottom: 80px ;
 }
 nav ul {
     display:flex;
@@ -43,11 +53,24 @@ nav ul {
 h2{
     margin: 15px 20px;
 }
-h4{
+.btn2{
     float: right;
     margin: -40px 30px;
     border: 1px solid orange;
     color: orange;
+    width: 150px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    background: #fff;
+}
+.btn2:hover{
+    background-color: orange;
+    color: #fff;
+    animation: 2ms;
+}
+.btn3 img{
+    width: 10px;
 }
 nav ul li{
     list-style: none;
@@ -70,8 +93,10 @@ nav ul li a:hover{
 }
 .pro-item{
     height: 100%;
-    border:100% solid black;
+    border:  1px solid black;
     margin: 5px;
+    padding: 10px;
+    border-radius: 10px;
 }
 .pro-item img{
     width: 100%;
@@ -80,36 +105,55 @@ nav ul li a:hover{
     margin-left: 15px;
     font-weight: bold;
     font-size: 22px;
+
 }
 .gia{
     color: red;
-    margin-left: 15px;
+    margin-left: 5px;
     font-weight: bold;
     font-size: 20px;
+    padding: 10px;
 }
-button{
+.new a{
+    color: red;
+    text-decoration: none;
+    margin: 0px 15px;
+    font-size: 15px;
+    font-weight: bold;
+}
+.new a img{
+    width: 20px; 
+    height: auto;
+    vertical-align: middle;
+    color: red;
+    text-decoration: none;
+}
+
+.btn1{
     border: 1px solid orange;
     margin-left: 15px;
-    width: 264px;
+    width: 250px;
     height: 40px;
     color: orange;
     background: #fff;
 }
-button:hover{
+.btn1:hover{
     background-color: orange;
     color: #fff;
     animation: 2ms;
 }
 .product2{
+    display: flex;
    grid-template-columns: 1fr 1fr 1fr;
     grid-gap:15px;
     /* margin: 25px; */
     padding: 10px;
 }
-.product2 img{
+/* .product2 img{
     width: 405px;
     height: 296px;
-}
+    
+} */
 .footer1{
     height: 186px;
     background-color: #fff7ed;
@@ -117,6 +161,8 @@ button:hover{
     align-items: center;
     grid-gap: 170px;
     justify-content: center;
+    font-weight: bold;
+    line-height: 10px;
 }
 p{
     float: right;
@@ -124,8 +170,11 @@ p{
 }
 .icon img{
     width: 50px;
-    
+    display: flex;
+    align-items: center;
+    padding-bottom:10px ;
 }
+
 footer {
     background-color: #333;
     color: #fff;
