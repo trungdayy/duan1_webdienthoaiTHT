@@ -27,6 +27,7 @@ class AdminTaiKhoan{
             $sql = "INSERT INTO tai_khoan (hoten, email, mat_khau, role) 
             VALUES (:hoten, :email, :password, :role)";
             $stmt = $this->conn->prepare($sql);
+            //var_dump($stmt);die();
             $stmt->execute([
             ':hoten' => $hoten, 
             ':email' => $email, 

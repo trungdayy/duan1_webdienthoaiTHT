@@ -51,6 +51,8 @@ class AdminTaiKhoanController{
                     $role = 1;
 
                     $this->modelTaiKhoan->insertTaiKhoan($hoten, $email, $password, $role);
+                    //var_dump($this);die();
+
                     
 
                     header("Location: " . BASE_URL_ADMIN . "?act=listtaikhoanquantri");

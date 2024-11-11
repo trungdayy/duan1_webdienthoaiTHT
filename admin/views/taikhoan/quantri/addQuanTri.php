@@ -50,7 +50,6 @@
                     <p class="text-danger"><?= $_SESSION['error']['email'] ?></p>
                   <?php } ?>
                 </div>
-
                 
               <!-- /.card-body -->
 
