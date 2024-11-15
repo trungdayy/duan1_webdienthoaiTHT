@@ -10,7 +10,7 @@ class HomeController
     }
 
     public function home(){
-        echo "Welcome";
+        require_once './views/home.php';
     }
     public function trangchu(){
         echo "Đây là trang chủ của tôi";
