@@ -1,0 +1,476 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Poppins, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+@media (min-width: 1024px) {
+    body {
+        font-size: 18px;
+    }
+}
+.container {
+    max-width: 1280px;
+    margin: auto;
+    background-color: #fff;
+    /* margin: 0 auto; */
+    
+}
+header {
+    display: flex;
+    align-items: center;
+    max-height: 70px;
+    width: 100%;
+    justify-content: space-between;
+    /* font-weight: bold; */
+    /* position: fixed; */
+    background: #fff;
+    transition: top 0.3s ease, opacity 0.3s ease; /* Thêm chuyển động mượt */
+    opacity: 1;
+}
+header img{
+    width: 10%;
+    margin-left: 30px;
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+.icon1 {
+    margin-right: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+#search-box {
+    display: flex;
+    align-items: center;
+}
+
+.search-container {
+    position: relative;
+}
+
+#search-text {
+    padding: 10px 15px;
+    font-size: 10px;
+    outline: none;
+    border: 1px solid orange;
+    border-radius: 50px;
+    width: 0;
+    opacity: 0;
+    transition: width 0.3s ease, opacity 0.3s ease;
+}
+
+#search-btn {
+    position: absolute;
+    right: 1px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: orange;
+    border: none;
+    cursor: pointer;
+    padding: 6px 10px;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 50px;
+}
+
+.search-container:hover #search-text {
+    width: 200px; /* Chiều rộng của ô input khi hover */
+    opacity: 1;
+    padding-right: 40px; /* Thêm khoảng trống cho icon */
+}
+
+
+.material-symbols-outlined {
+    font-size: 24px;
+    margin-left: 15px;
+    cursor: pointer;
+    color: orange;
+}
+
+.banner img{
+    max-width: 100%;
+    padding-bottom: 80px ;
+}
+nav ul {
+    display:flex;
+    text-align: center;
+    gap: 50px;
+    font-size: 22px;
+    justify-content: space-between;
+    
+}
+h2{
+    margin: 15px 20px;
+}
+
+nav ul li{
+    list-style: none;
+}
+nav ul li a{
+    text-decoration: none;
+    color: black;
+    transition:  0.3s ease, color 0.3s ease;
+    padding: 10px 10px;
+
+}
+nav ul li a:hover{
+    color: #fff;
+    background-color: orange;
+    border-radius: 5px;
+}
+
+.btn2{
+    float: right;
+    margin: -40px 30px;
+    border: 1px solid orange;
+    color: orange;
+    width: 150px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    background: #fff;
+}
+.btn2:hover{
+    background-color: orange;
+    color: #fff;
+    animation: 2ms;
+}
+
+
+/* content */
+.product-page {
+    display: flex;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    
+}
+
+.product-image {
+    flex: 1;
+    padding: 20px;
+}
+
+.product-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+.img-main{
+background-color: white;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+border: 1px solid orange;
+}
+.thumbnail-gallery {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.thumbnail-gallery img {
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+    border: 2px solid transparent;
+}
+
+.thumbnail-gallery img:hover,
+.thumbnail-gallery img.selected {
+    border-color: orange;
+}
+
+.product-details {
+    flex: 1;
+    padding: 20px;
+}
+
+.product-details h1 {
+    font-size: 24px;
+    color: #333;
+}
+
+.series-info {
+    color: #777;
+    margin: 10px 0;
+}
+
+.promotion-details {
+    list-style: none;
+    color: #555;
+    margin: 15px 0;
+    font-size: 14px;
+}
+
+/* Thiết lập kiểu cho phần lựa chọn màu sắc */
+.color-selection {
+    font-family: Arial, sans-serif;
+    color: #333;
+}
+
+.color-selection label {
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.color-options {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.color-option {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 2px solid #ccc; /* Viền mặc định */
+    cursor: pointer;
+    position: relative;
+}
+.color-option:hover,
+.color-option.selected {
+    border-color: orange; /* Viền khi được chọn */
+}
+.color-option.black { background-color: #000; }
+.color-option.white { background-color: red; }
+.color-option.gray { background-color: white; }
+.color-option.light-gray { background-color: yellow; }
+.color-option.pink { background-color: #f8d7da; }
+.color-option.teal { background-color: #008080; }
+
+
+.capacity-options {
+    display: flex;
+    gap: 10px;
+}
+.capacity-main {
+    display: flex;
+    padding-top: 25px ;
+}
+.capacity {
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    border-radius: 5px;
+    background: #fff;
+}
+.capacity:hover,
+.capacity.selected{
+    border-color: orange;
+}
+.quantity-main{
+    padding: 25px 0;
+    display: flex;
+}
+.quantity input{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    text-align: center;
+    height: 25px;
+    border-radius: 5px;
+    width: 80px;
+    border: 0.5;
+}
+
+.price {
+    font-size: 25px;
+    color: #e74c3c;
+    margin: 20px 0;
+    font-weight: bold;
+}
+
+.buy-now {
+    width: 400px;
+    background: #1F2430;
+    border-radius: 8px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    font-size: 16px;
+    transition: all 0.3s;
+    margin-bottom: 8px;
+    color: white;
+    border: none;
+}
+.buy-now:hover{
+    background: orange;;
+}
+.fa-solid fa-bag-shopping{
+    margin: 0 50px;
+}
+.add-to-cart {
+    background:white;
+    width: 196px;
+    height: 40px;
+    border-radius: 8px;
+    font-weight: 400;
+    transition: all 0.3s;
+    opacity: 0.8;
+    
+}
+
+.installment {
+    width: 196px;
+    height: 40px;
+    border-radius: 8px;
+    background:white;
+    font-weight: 400;
+    transition: all 0.3s;
+    opacity: 0.8;
+
+}
+.add-to-cart:hover,
+.installment:hover{
+    background: orange;
+    color: white;
+}
+hr{
+    margin-top: 15px;
+    opacity: 0.5;
+}
+
+h2{
+    text-align: center;
+    padding-bottom: 25px;
+}
+.main-item{
+    max-width: 1280px;
+    margin: 0 auto;
+    display: flex;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap:25px;
+    text-align: center;
+    padding: 15px 0;
+    justify-content: center;
+
+}
+.item img{
+    width: 80%;
+    justify-content: center;
+}
+.img-item{
+    width: 357px;
+    height: 357px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+}
+.img-item:hover,
+.img-item.selected{
+    border: 1px solid orange;
+    transform: all 0.3s;
+}
+.tenfl{
+    padding: 15px 0;
+    font-size: 24px;
+    color: #1F2430;
+    font-weight: 550;
+    border: none;
+    background: none;
+}
+.tenfl:hover{
+    color: orange;
+}
+.mota{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    padding: 15px 10px;
+}
+.mota1{
+    padding: 0 20px;
+}
+.mota-main {
+    max-width: 1280px;
+    margin: 0 auto;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+    padding: 15px 0;
+}
+.mota-text{
+    /* margin: 15px 100px; */
+    padding: 20px 100px;
+    font-size: 14px;
+    line-height: 24px;
+}
+.mota-text p{
+    padding: 15px 0;
+}
+.title{
+    text-align: center;
+    padding: 15px 0;
+}
+.motaanh img{
+    width: 85%;
+    justify-content: center;
+    text-align: center;
+    display: inline-block;
+    margin-left: 100px;
+}
+/* footer */
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: auto;
+    text-align: center;
+    padding: 30px 90px;
+  }
+  
+  .container2 {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    height: 300px;
+  
+  }
+  .footer-column {
+    flex: 1;
+    margin: 0 80px;
+}
+.logo{
+    text-align: center;
+    justify-content: center;
+    float: left;
+}
+.logo img{
+    width: 20%;
+    display: flex;
+}
+.logo p {
+    margin-left: 5px;
+    float: left;
+}
+.footer-column h3 {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.footer-column p,
+.footer-column a {
+    color: #b5b5b5;
+    font-size: 14px;
+    text-decoration: none;
+    line-height: 1.6;
+}
+
+.footer-column a:hover {
+    color: #fff;
+}
+
+/* Copyright Section */
+.footer-bottom {
+    text-align: center;
+    color: #b5b5b5;
+    padding: 20px 0;
+    font-size: 12px;
+    border-top: 1px solid #444;
+}
