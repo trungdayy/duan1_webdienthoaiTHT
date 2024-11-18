@@ -39,6 +39,7 @@
 
 
         </div>
+    
         <h2>Sản Phẩm HOT</h2>
         <button class="btn2">View all product</button>
 
@@ -53,8 +54,11 @@
                 </div>
             <?php endforeach; ?>
         </div>
-
-
+    </div>
+    <div class="banner">
+        <img src="./LayoutClient/img/section_banner.jpg" alt="">
+    </div>
+    <div class="container">
 
         <h2>Tin tức</h2>
         <button class="btn2">
@@ -62,7 +66,7 @@
         </button>
         <div class="product2">
             <div class="pro-item">
-                <img src="./LayoutClient/img/news1.png" alt="">
+                <img src="./LayoutClient/img/news1.png" alt="" >
                 <div class="date">
                     <span><img src="./LayoutClient/img/lich.png.png" alt="">
                         <p>14/11/2024</p>
@@ -106,7 +110,6 @@
             </div>
         </div>
     </div>
-
     <?php require_once 'views/layout/footer.php' ?>
 </body>
 
