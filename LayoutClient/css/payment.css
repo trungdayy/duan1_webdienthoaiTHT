@@ -2,19 +2,31 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Roboto', sans-serif;
+    font-family: Poppins, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-@media (min-width: 1024px) {
-    body {
-        font-size: 18px;
+@media (max-width: 768px) {
+    .banner img {
+        width: 100%;
+        height: 200px; /* Chiều cao ảnh nhỏ hơn */
     }
 }
+
+@media (max-width: 480px) {
+    .banner img {
+        width: 100%;
+        height: 150px; /* Chiều cao ảnh nhỏ hơn nữa */
+    }
+}
+body{
+    padding: 0;
+    margin: 0;
+    height: 100%;
+}
+
 .container {
     max-width: 1280px;
     margin: auto;
     background-color: #fff;
-    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
-    margin: 0 auto;
     
 }
 header {
@@ -23,18 +35,17 @@ header {
     max-height: 70px;
     width: 100%;
     justify-content: space-between;
-    /* font-weight: bold; */
-    position: fixed;
     background: #fff;
     transition: top 0.3s ease, opacity 0.3s ease; /* Thêm chuyển động mượt */
     opacity: 1;
 }
 header img{
-    width: 10%;
+    max-height: 50px;
     margin-left: 30px;
     display: flex;
     justify-content: space-between;
-    
+    width: 10%;
+    object-fit: cover;
 }
 
 .icon1 {
@@ -86,7 +97,6 @@ header img{
     padding-right: 40px; /* Thêm khoảng trống cho icon */
 }
 
-
 .material-symbols-outlined {
     font-size: 24px;
     margin-left: 15px;
@@ -95,9 +105,11 @@ header img{
 }
 
 .banner img{
-    max-width: 100%;
-    padding-bottom: 80px ;
+    width: 100%;
+    max-height: 500px; /* Giới hạn chiều cao tối đa */
+    object-fit: cover; /* Giữ tỷ lệ ảnh và điều chỉnh phù hợp với khung */
 }
+
 nav ul {
     display:flex;
     text-align: center;
@@ -126,140 +138,162 @@ nav ul li a:hover{
     border-radius: 5px;
 }
 
-.btn2{
-    float: right;
-    margin: -40px 30px;
-    border: 1px solid orange;
-    color: orange;
-    width: 150px;
-    height: 30px;
-    line-height: 30px;
-    text-align: center;
-    background: #fff;
-}
-.btn2:hover{
-    background-color: orange;
-    color: #fff;
-    animation: 2ms;
-}
-.btn3 img{
-    width: 10px;
-}
-.product{
-    display: flex;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-gap:15px;
-    /* margin: 25px; */
-    padding: 10px;
-}
-.pro-item{
-    height: 100%;
-    border:  1px solid orange;
-    margin: 5px;
-    padding: 10px;
-    border-radius: 10px;
-}
-.date{
-    font-size: 12px;
-    margin-left: 10px;
-}
-.date span img{
-    width: 20px;
-    
-}
-.date span {
-    padding-top: 10px;
-    display: flex;
-    align-items: center; /* Căn giữa hình ảnh và văn bản theo chiều dọc */
+/* main */
+.checkout-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
 }
 
-.date span p {
-    
-    color: #444;
+.header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
 }
-.pro-item img{
+
+.header .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.header .logo img {
+    width: 50px;
+    height: 50px;
+}
+
+.checkout-main {
+    display: flex;
+    gap: 20px;
+}
+
+.checkout-form, .shipping-payment, .checkout-sidebar {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.checkout-form {
+    width: 40%;
+}
+
+.shipping-payment {
+    width: 30%;
+}
+
+.checkout-sidebar {
+    width: 30%;
+}
+
+.checkout-form input, .checkout-form select, .checkout-form textarea {
     width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
 }
-.ten{
-    margin-left: 10px;
-    font-weight: bold;
-    font-size: 22px;
-    padding-top: 5px;
-    padding-bottom: 10px;
+
+.shipping-payment h2, .checkout-sidebar h2 {
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+.shipping-payment .info-message {
+    background-color: #f0f8ff;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.payment-method {
+    margin-top: 15px;
+}
+
+.payment-method label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.order-summary .item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+.voucher{
+    margin-left: 40px;
+}
+hr{
+    margin: 15px 0;
+}
+.order-summary .item img {
+    width: 50px;
+    height: 50px;
+    border-radius: 4px;
+}
+
+.order-summary input {
+    /* width: calc(100% - 70px); */
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    
+}
+
+.order-summary button {
+    padding: 10px;
+    background-color: orange;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-top: 10px;
+}
+.order-summary button:hover{
+    background: orangered;
+}
+.price-summary {
+    margin-top: 20px;
+    font-size: 16px;
 }
 .gia{
-    color: red;
-    margin-left: 5px;
-    font-weight: bold;
-    font-size: 20px;
-    padding: 10px;
+    float: right;
 }
-.new a{
-    color: red;
-    text-decoration: none;
-    margin: 0px 10px;
-    font-size: 15px;
-    font-weight: bold;
+.op{
+    float: right;
 }
-.new a img{
-    width: 20px; 
-    height: auto;
-    vertical-align: middle;
+.price-summary .total {
+    font-weight: bold;
     color: red;
-    text-decoration: none;
+    font-size: 18px;
 }
 
-.btn1{
-    border: 1px solid orange;
-    margin-left: 15px;
-    width: 250px;
-    height: 40px;
-    color: orange;
-    background: #fff;
-    border-radius: 5px;
-}
-.btn1:hover{
-    background-color: orange;
-    color: #fff;
-    /* animation: 2ms; */
-    transition:  0.3s ease, color 0.5s ease;
-
-}
-.product2{
-    display: flex;
-   grid-template-columns: 1fr 1fr 1fr;
-    grid-gap:15px;
-    /* margin: 25px; */
+.checkout-btn {
+    width: 100%;
     padding: 10px 0;
-    padding-bottom: 50px;
+    background-color: orange;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 20px;
 }
-
-.footer1{
-    height: 186px;
-    background-color: #fff7ed;
-    display: flex;
-    align-items: center;
-    grid-gap: 180px;
-    justify-content: center;
-    font-weight: bold;
-    line-height: 10px;
-    
+.checkout-btn:hover{
+    background: orangered;
 }
-
-.icon img{
-    width: 50px;
-    display: flex;
-    align-items: center;
-    padding-bottom:10px ;
-    
-}
-
+/* footer */
 footer {
     background-color: #333;
     color: #fff;
-    padding: auto;
     text-align: center;
     padding: 30px 90px;
+    height: 100%;
+    padding-bottom: 0;
+    margin-bottom: 0;
   }
   
   .container2 {
@@ -267,8 +301,6 @@ footer {
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
-    height: 300px;
-  
   }
   .footer-column {
     flex: 1;
