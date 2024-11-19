@@ -23,7 +23,9 @@ match ($act) {
 
     'trangchu' => (new HomeController())->trangchu(),
 
-    'danhSachSanPham' => (new HomeController())->danhSachSanPham(),
+    'chi-tiet-san-pham' => (new HomeController())->chiTietSanPham(),
+
+    //'danhSachSanPham' => (new HomeController())->danhSachSanPham(),
 
     default => 'Không tìm thấy trang'
 };

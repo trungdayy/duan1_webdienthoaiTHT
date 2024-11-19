@@ -64,6 +64,14 @@ function uploadFileAlbum($file, $folderUpload, $key){
     return null;
 }
 
+function checkLoginAdmin(){
+    if(!isset($_SESSION['user_admin'])){
+        header("location:" . BASE_URL_ADMIN . '?act=login-admin');
+        // var_dump('abc');
+        exit();
+        }
+}
+
 function formatDate($date){
     return date('d-m-Y', strtotime($date));
 }

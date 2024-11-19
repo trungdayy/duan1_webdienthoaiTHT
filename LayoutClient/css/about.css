@@ -2,67 +2,216 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Roboto', sans-serif;
-    justify-content: center;
-
-
+    font-family: Poppins, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-@media (min-width: 1024px) {
-    body {
+@media (max-width: 768px) {
+    .banner img {
+        width: 100%;
+        height: 200px; /* Chiều cao ảnh nhỏ hơn */
+    }
+}
 
-        font-size: 18px;
+@media (max-width: 480px) {
+    .banner img {
+        width: 100%;
+        height: 150px; /* Chiều cao ảnh nhỏ hơn nữa */
     }
 }
 body{
-    max-width: 1440px;
-
+    padding: 0;
+    margin: 0;
+    height: 100%;
 }
+
 .container {
-    /* max-width: 1280px; */
+    max-width: 1280px;
     margin: auto;
     background-color: #fff;
-    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
-    margin: 0 100px;
     
 }
 header {
-    width: 1440px;
     display: flex;
     align-items: center;
-    height: 70px;
-    
+    max-height: 70px;
+    width: 100%;
     justify-content: space-between;
-    /* font-weight: bold; */
-    position: fixed;
+    /* position: fixed; */
     background: #fff;
     transition: top 0.3s ease, opacity 0.3s ease; /* Thêm chuyển động mượt */
     opacity: 1;
 }
 header img{
-    width: 10%;
-    height: auto;
+    max-height: 50px;
     margin-left: 30px;
     display: flex;
     justify-content: space-between;
-    
+    width: 10%;
+    object-fit: cover;
 }
-.icon1{
-    margin-right: 55px;
-    
 
+.icon1 {
+    margin-right: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    box-sizing: border-box;
 }
+
+#search-box {
+    display: flex;
+    align-items: center;
+}
+
+.search-container {
+    position: relative;
+}
+
+#search-text {
+    padding: 10px 15px;
+    font-size: 10px;
+    outline: none;
+    border: 1px solid orange;
+    border-radius: 50px;
+    width: 0;
+    opacity: 0;
+    transition: width 0.3s ease, opacity 0.3s ease;
+}
+
+#search-btn {
+    position: absolute;
+    right: 1px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: orange;
+    border: none;
+    cursor: pointer;
+    padding: 6px 10px;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 50px;
+}
+
+.search-container:hover #search-text {
+    width: 200px; /* Chiều rộng của ô input khi hover */
+    opacity: 1;
+    padding-right: 40px; /* Thêm khoảng trống cho icon */
+}
+
+.material-symbols-outlined {
+    font-size: 24px;
+    margin-left: 15px;
+    cursor: pointer;
+    color: orange;
+}
+/* banner */
+.banner {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    /* max-width: 1200px; */
+    margin: auto;
+}
+
+.slider {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    height: 420px; /* Chiều cao slider */
+}
+
+.slides {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0; /* Ban đầu các slide đều ẩn */
+    transition: opacity 1s ease-in-out; /* Hiệu ứng mờ dần */
+    background: lightgray; /* Background tạm thời */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+}
+
+.slide.active {
+    opacity: 1; /* Slide đang hoạt động sẽ hiển thị */
+    z-index: 1; /* Đưa slide đang hoạt động lên trên */
+}
+
+.dots {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 10;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    background-color: #fff;
+    border-radius: 50%;
+    cursor: pointer;
+    opacity: 0.5;
+    transition: opacity 0.3s, background-color 0.3s;
+}
+
+.dot.active {
+    opacity: 1;
+    background-color: #555;
+}
+
+
 .banner img{
     width: 100%;
-    height: auto;
-    padding-bottom: 80px ;
+    max-height: 500px; /* Giới hạn chiều cao tối đa */
+    object-fit: cover; /* Giữ tỷ lệ ảnh và điều chỉnh phù hợp với khung */
 }
+/* Nút điều hướng */
+button.prev, button.next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px 15px;
+    z-index: 20;
+    font-size: 30px;
+    border-radius: 50%;
+}
+
+button.prev {
+    left: 10px; /* Căn trái */
+}
+
+button.next {
+    right: 10px; /* Căn phải */
+}
+
+button.prev:hover, button.next:hover {
+    background-color: orange;
+    transition: all 1s;
+
+}
+
+
+/* menu */
 nav ul {
     display:flex;
     text-align: center;
-    gap: 80px;
-    
+    gap: 50px;
     font-size: 22px;
-    /* justify-content: space-between; */
+    justify-content: space-between;
     
 }
 h2{
@@ -76,77 +225,39 @@ nav ul li a{
     text-decoration: none;
     color: black;
     transition:  0.3s ease, color 0.3s ease;
+    padding: 10px 10px;
+
 }
 nav ul li a:hover{
     color: #fff;
     background-color: orange;
     border-radius: 5px;
-    padding: 3px 5px;
 }
 
+
+/* main */
+.btn2{
+    float: right;
+    margin: -40px 30px;
+    border: 1px solid orange;
+    color: orange;
+    width: 150px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    background: #fff;
+}
+.btn2:hover{
+    background-color: orange;
+    color: #fff;
+    animation: 2ms;
+}
+.btn3 img{
+    width: 10px;
+}
 .product{
     display: flex;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-gap:15px;
-    /* margin: 25px; */
-    padding: 10px;
-}
-.pro-item{
-    height: 100%;
-    border:  1px solid orange;
-    margin: 5px;
-    padding: 10px;
-    border-radius: 10px;
-}
-.pro-item img{
-    width: 100%;
-}
-.ten{
-    margin-left: 15px;
-    font-weight: bold;
-    font-size: 22px;
-
-}
-.gia{
-    color: red;
-    margin-left: 5px;
-    font-weight: bold;
-    font-size: 20px;
-    padding: 10px;
-}
-.new a{
-    color: red;
-    text-decoration: none;
-    margin: 0px 15px;
-    font-size: 15px;
-    font-weight: bold;
-}
-.new a img{
-    width: 20px; 
-    height: auto;
-    vertical-align: middle;
-    color: red;
-    text-decoration: none;
-}
-
-.btn1{
-    border: 1px solid orange;
-    margin-left: 15px;
-    width: 250px;
-    height: 40px;
-    color: orange;
-    background: #fff;
-}
-.btn1:hover{
-    background-color: orange;
-    color: #fff;
-    /* animation: 2ms; */
-    transition:  0.3s ease, color 0.5s ease;
-
-}
-.product2{
-    display: flex;
-   grid-template-columns: 1fr 1fr 1fr;
     grid-gap:15px;
     /* margin: 25px; */
     padding: 10px;
@@ -251,7 +362,10 @@ p3{
     border-top: 1px solid #444;
 }
 
-
+.conten{
+    width: 1440px;
+    margin: auto;
+}
 
 .conten1{
     width: 100%;
@@ -267,6 +381,7 @@ p3{
     height: 300px;
     display: flex;
     flex-direction: column;
+    padding-top: 50px;
     
 }
 .ndconten1 img{
@@ -290,6 +405,7 @@ p3{
 }
 .conten2 img{
     width: 100%;
+    height: 400px;
     border-radius: 10px;
 }
 .conten2 p{
@@ -305,12 +421,13 @@ p3{
 }
 .conten3{
     height: 100px;
-    padding-top: 20 25px 30px 30px;
+    /* padding: 20 25px 30px 30px; */
 
 }
 .conten3 h2{
     height: 100px;
     text-align: center;
+    padding-top: 20px;
 }
 .conten4{
     width: 1440px;

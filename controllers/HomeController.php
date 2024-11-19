@@ -21,6 +21,23 @@ class HomeController
         return $listSanPhamHot;
     }
 
+    public function chiTietSanPham(){
+        $id = $_GET['id_sanpham'];
+        $sanPham = $this->modelSanPham->getDetailSanPham($id);
+        $listAnhSanPham = $this->modelSanPham->getListAnhSanPham($id);
+        $listBinhLuan = $this->modelSanPham->getBinhLuanFromSanPham($id);
+        //var_dump($listBinhLuan);die();
+        $listSanPhamCungDanhMuc = $this->modelSanPham->getListSanPhamDanhMuc($sanPham['danh_muc_id']);
+        //var_dump($listSanPhamCungDanhMuc);die();
+        if($sanPham){
+            require_once './views/detailSanPham.php';
+        }else{
+            header("Location: " . BASE_URL);
+            exit();
+        }
+
+    }
+
     public function trangchu(){
         echo "Đây là trang chủ của tôi";
     }
