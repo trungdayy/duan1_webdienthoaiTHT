@@ -77,5 +77,5 @@ function formatDate($date){
 }
 
 function formatNumber($number){
-    return number_format($number, 0, ',', '.');
+    return number_format($number, 0, '.', '.');
 }

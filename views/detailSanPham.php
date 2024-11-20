@@ -2,7 +2,7 @@
 
 <body>
 
-<?php require_once 'views/layout/menu.php' ?>
+    <?php require_once 'views/layout/menu.php' ?>
     <div class="banner">
         <div class="slider" id="slider">
             <div class="slide active">
@@ -69,59 +69,56 @@
                 </div>
                 <ul class="promotion-details">
                     <?= $sanPham['mo_ta'] ?>
+                    <form action="<?= BASE_URL . '?act=them-gio-hang' ?>" method="post">
+                        <div class="quantity-main">
+                            <input type="hidden" name="san_pham_id" value="<?= $sanPham['id']; ?>">
+                            <label for="quantity">Số Lượng:</label>
+                            <div class="quantity">
+                                <input type="number" id="quantity" value="1" min="1" name="so_luong">
+                            </div>
+                        </div>
+                        
+
+                        <hr align="center">
+
+
+                        <div class="price">
+                            <div class="giamgia" id="discount-price"><?= formatNumber($sanPham['giam_gia']) ?> đ</div>
+                            <div class="gia" id="original-price"><?= formatNumber($sanPham['gia']) ?> đ</div>
+
+                        </div>
+                        <div class="purchase-buttons">
+                            <div class="buy-now">
+                                <button class="buy-now">
+                                    <i class="fa-solid fa-bag-shopping">
+                                    </i>
+                                    Đặt hàng
+                                </button>
+                            </div>
+                            <button class="add-to-cart">Thêm giỏ hàng</button>
+                            <button class="installment">Mua trả góp</button>
+                        </div>
+                    </form>
                     <!-- Add other list items here -->
                 </ul>
 
                 <div class="color-selection">
-                    <label for="color">Màu sắc:</label>
-                    <div class="color-options">
-                        <div class="color-option black"></div>
-                        <div class="color-option white selected"></div>
-                        <div class="color-option gray"></div>
-                        <div class="color-option light-gray"></div>
-                        <div class="color-option pink"></div>
-                        <div class="color-option teal"></div>
-                    </div>
+
+                            <div class="capacity-main">
+                                <label for="capacity">Dung Lượng:</label>
+                                <div class="capacity-options">
+                                    <button class="capacity" data-value="128GB">128GB</button>
+                                    <button class="capacity" data-value="256GB">256GB</button>
+                                    <button class="capacity" data-value="512GB">512GB</button>
+                                </div>
+                            </div>
 
 
-                    <div class="capacity-main">
-                        <label for="capacity">Dung Lượng:</label>
-                        <div class="capacity-options">
-                            <button class="capacity" data-value="128GB">128GB</button>
-                            <button class="capacity" data-value="256GB">256GB</button>
-                            <button class="capacity" data-value="512GB">512GB</button>
+
                         </div>
 
-                    </div>
 
 
-                    <div class="quantity-main">
-                        <label for="quantity">Số Lượng:</label>
-                        <div class="quantity">
-                            <input type="number" id="quantity" value="1" min="1">
-                        </div>
-                    </div>
-                </div>
-
-                <hr align="center">
-
-
-                <div class="price">
-                    <div class="giamgia" id="discount-price"><?= formatNumber($sanPham['giam_gia']) ?> đ</div>
-                    <div class="gia" id="original-price"><?= formatNumber($sanPham['gia']) ?> đ</div> 
-                    <div class="total-price" id="total-price"><?= formatNumber($sanPham['gia']) ?> đ</div> 
-                </div>
-                <div class="purchase-buttons">
-                    <div class="buy-now">
-                        <button class="buy-now">
-                            <i class="fa-solid fa-bag-shopping">
-                            </i>
-                            Đặt hàng
-                        </button>
-                    </div>
-                    <button class="add-to-cart">Thêm giỏ hàng</button>
-                    <button class="installment">Mua trả góp</button>
-                </div>
                 <div class="contact-message" style="display: none; color: red; margin-top: 10px;">
                     Vui lòng liên hệ để biết thêm thông tin về sản phẩm!
                 </div>
@@ -150,7 +147,7 @@
                                     <div class="review-box">
 
                                         <div class="post-author">
-                                            <p><span>Khách hàng -</span><?= $binhLuan['ngay_bl'] ?></p>
+                                            <p><span><?= $binhLuan['hoten'] ?> -</span><?= $binhLuan['ngay_bl'] ?></p>
                                         </div>
                                         <p><?= $binhLuan['noi_dung'] ?></p>
                                     </div>
@@ -221,7 +218,7 @@
     </div>
 
     <script src="./LayoutClient/js/details.js"></script>
-    
+
     <?php require_once 'views/layout/footer.php' ?>
 </body>
 

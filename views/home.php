@@ -73,8 +73,10 @@
                     <div class="ten"><?= $sanPham['ten_sp'] ?></div>
                     <div class="giamgia"><?= formatNumber($sanPham['giam_gia']) ?> đ</div>
                     <div class="gia"><?= formatNumber($sanPham['gia']) ?> đ</div>
-                    
-                    <button class="btn1">Xem chi tiết</button>
+
+                    <button class="btn1" onclick="location.href='<?= BASE_URL . '?act=chi-tiet-san-pham&id_sanpham=' . $sanPham['id']; ?>'">
+                        Xem chi tiết
+                    </button>
                 </div>
             <?php endforeach; ?>
 
@@ -92,8 +94,11 @@
                     <div class="ten"><?= $sanPham['ten_sp'] ?></div>
                     <div class="giamgia"><?= formatNumber($sanPham['giam_gia']) ?> đ</div>
                     <div class="gia"><?= formatNumber($sanPham['gia']) ?> đ</div>
-                    
-                    <button class="btn1">Xem chi tiết</button>
+
+                    <button class="btn1" onclick="location.href='<?= BASE_URL . '?act=chi-tiet-san-pham&id_sanpham=' . $sanPham['id']; ?>'">
+                        Xem chi tiết
+                    </button>
+
                 </div>
             <?php endforeach; ?>
         </div>
