@@ -26,9 +26,9 @@
         </label>
 
         <?php if (!isset($_SESSION['user_client'])) { ?>
-            <a href="<?= BASE_URL . '?act=login' ?>"><span class="material-symbols-outlined">person</span></a>
+            <a href="<?= BASE_URL . '?act=login' ?>"><span class="material-symbols-outlined">Đăng nhập</span></a>
         <?php } else{ ?>
-        <a href=""><span class="material-symbols-outlined"><i class="fas fa-user"></i></span></a>
+        <a href="<?= BASE_URL . '?act=lich-su-mua-hang' ?>"><span class="material-symbols-outlined"><i class="fas fa-user"></i></span></a>
         <?php } ?>
         <a href="<?= BASE_URL . '?act=gio-hang' ?>"><span class="material-symbols-outlined">
                 shopping_cart

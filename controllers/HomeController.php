@@ -244,6 +244,63 @@ class HomeController
         }
     }
 
+    public function lichSuMuaHang(){
+        if(isset($_SESSION['user_client'])){
+            $user = $this->modelTaiKhoan->getTaiKhoanFromEmail($_SESSION['user_client']);
+            $tai_khoan_id = $user['id'];
+
+            //lấy danh sách trạng thái đơn hàng
+            $arrTrangThaiDonHang = $this->modelDonHang->getTrangThaiDonHang();
+            $trangThaiDonHang = array_column($arrTrangThaiDonHang, 'ten_trang_thai', 'id');
+
+            //lấy danh sách trạng thái thanh toán
+            $arrPhuongThucThanhToan = $this->modelDonHang->getPhuongThucThanhToan();
+            $phuongThucThanhToan = array_column($arrPhuongThucThanhToan, 'ten_phuong_thuc', 'id');
+            //var_dump($phuongThucThanhToan);die();
+            //lấy danh sách tất cả đơn hàng của tài khoản
+            $donHangs = $this->modelDonHang->getDonHangFromUser($tai_khoan_id);
+            require_once "./views/lichSuMuaHang.php";
+        }else{
+            var_dump("Bạn chưa đăng nhập");
+            die();
+        }
+    }
+
+    public function chiTietMuaHang(){
+
+    }
+
+    public function huyDonHang(){
+        if(isset($_SESSION['user_client'])){
+            $user = $this->modelTaiKhoan->getTaiKhoanFromEmail($_SESSION['user_client']);
+            $tai_khoan_id = $user['id'];
+
+            //lấy id đơn hàng truyền từ URL
+            $donHangId = $_GET['id'];
+
+            //kiểm tra đơn hàng
+            $donHang = $this->modelDonHang->getDonHangById($donHangId);
+
+            if($donHang['tai_khoan_id'] != $tai_khoan_id){
+                echo "Bạn không có quyền hủy đơn hàng này";
+                exit();
+            }
+
+            if($donHang['trang_thai_id'] != 1){
+                echo "Chỉ đơn hàng ở trạng thái 'Chưa xác nhận' mới có thể hủy";
+                exit();
+            }
+
+            //hủy đơn hàng
+            $this->modelDonHang->updateTrangThaiDonHang($donHangId, 10);
+            header("Location: ". BASE_URL . '?act=lich-su-mua-hang');
+            exit();
+        }else{
+            var_dump("Bạn chưa đăng nhập");
+            die();
+        }
+    }
+
 
     public function trangchu()
     {

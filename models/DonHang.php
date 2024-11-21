@@ -47,4 +47,63 @@ class DonHang{
             echo "Loi: ". $e->getMessage();
         }
     }
+
+    public function getDonHangFromUser($tai_khoan_id){
+        try{
+            $sql = "SELECT * FROM don_hang WHERE tai_khoan_id = :tai_khoan_id";
+            $stmt = $this->conn->prepare($sql);
+            $stmt->execute([':tai_khoan_id' => $tai_khoan_id]);
+            return $stmt->fetchAll();
+        }catch(PDOException $e){
+            echo "Loi: ". $e->getMessage();
+        }
+    }
+
+    public function getTrangThaiDonHang(){
+        try{
+            $sql = "SELECT * FROM trang_thai_don_hang";
+            $stmt = $this->conn->prepare($sql);
+            $stmt->execute();
+            return $stmt->fetchAll();
+        }catch(PDOException $e){
+            echo "Loi: ". $e->getMessage();
+        }
+    }
+
+    public function getPhuongThucThanhToan(){
+        try{
+            $sql = "SELECT * FROM phuong_thuc_thanh_toan";
+            $stmt = $this->conn->prepare($sql);
+            $stmt->execute();
+            return $stmt->fetchAll();
+        }catch(PDOException $e){
+            echo "Loi: ". $e->getMessage();
+        }
+    }
+    public function getDonHangById($donHangId){
+        try{
+            $sql = "SELECT * FROM don_hang WHERE id = :id";
+
+            $stmt = $this->conn->prepare($sql);
+            $stmt->execute([':id' => $donHangId]);
+            return $stmt->fetch();
+        }catch(PDOException $e){
+            echo "Loi: ". $e->getMessage();
+        }
+    }
+
+    public function updateTrangThaiDonHang($donHangId, $trangThaiID){
+        try{
+            $sql = "UPDATE don_hang SET trang_thai_id = :trang_thai_id
+            WHERE id = :id";
+            $stmt = $this->conn->prepare($sql);
+            $stmt->execute([
+                ':trang_thai_id' => $trangThaiID,
+                ':id' => $donHangId
+            ]);
+            return true;
+        }catch(PDOException $e){
+            echo "Loi: ". $e->getMessage();
+        }
+    }
 }
