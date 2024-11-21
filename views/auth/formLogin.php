@@ -337,22 +337,28 @@
             </form>
 
 
-            <form action="" class="sign-up-form">
+            <form action="<?= BASE_URL . '?act=check-signup' ?>" method="post" class="sign-up-form">
+                <?php if (isset($_SESSION['error'])) { ?>
+                    <p class="text-danger"><?= $_SESSION['error'] ?></p>
+                <?php } else {
+                ?><p class="login-box-msg text-center">Vui lòng đăng nhập</p>
+                <?php } ?>
+
                 <h2 class="title">THT Shop | Sing up</h2>
                 <div class="input-field">
                     <i class="fas fa-user"></i>
-                    <input type="text" placeholder="Username">
+                    <input type="text" name="username" placeholder="Username">
                 </div>
                 <div class="input-field">
                     <i class="fas fa-envelope"></i>
-                    <input type="text" placeholder="Email">
+                    <input type="text" name="email" placeholder="Email">
                 </div>
                 <div class="input-field">
                     <i class="fas fa-lock"></i>
-                    <input type="password" placeholder="Password">
+                    <input type="password" name="password" placeholder="Password">
                 </div>
                 <input type="submit" value="Sign up" class="btn">
-                <p class="social-text">Or Sign in with platform</p>
+                <p class="social-text">Hoặc đăng nhập bằng nền tảng</p>
                 <div class="social-media">
                     <a href="" class="social-icon">
                         <i class="fab fa-facebook"></i>
@@ -364,7 +370,10 @@
                         <i class="fab fa-google"></i>
                     </a>
                 </div>
-                <p class="account-text">Already have an account? <a href="#" id="sign-in-btn2">Sign in</a></p>
+                <p class="account-text">
+                    Bạn đã có tài khoản?
+                    <input type="submit" value="Sign in" class="btn">
+                </p>
 
             </form>
         </div>

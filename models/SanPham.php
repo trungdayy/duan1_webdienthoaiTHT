@@ -107,19 +107,17 @@ class SanPham{
         }
     }
 
-    public function getSanPhamTheoDanhMuc($id_danhmuc){
-        try{
+    public function getSanPhamTheoDanhMuc($idDanhMuc) {
+        try {
             $sql = "SELECT sanpham.*, danhmuc.ten_loai 
-            FROM sanpham 
-            INNER JOIN danhmuc ON sanpham.danh_muc_id = danhmuc.id
-            WHERE sanpham.danh_muc_id = :id_danhmuc";
+                    FROM sanpham 
+                    INNER JOIN danhmuc ON sanpham.danh_muc_id = danhmuc.id
+                    WHERE sanpham.danh_muc_id = :id_danhmuc";
             $stmt = $this->conn->prepare($sql);
-            $stmt->execute([
-                ':id_danhmuc' => $id_danhmuc
-            ]);
+            $stmt->execute([':id_danhmuc' => $idDanhMuc]);
             return $stmt->fetchAll();
-        }catch(Exception $e){
-            echo "Loi". $e->getMessage();
+        } catch (Exception $e) {
+            echo "Lỗi: " . $e->getMessage();
         }
     }
 }

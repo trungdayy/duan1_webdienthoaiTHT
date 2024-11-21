@@ -32,10 +32,25 @@ class HomeController
         return $listSanPham;
     }
 
+    public function gioiThieu(){
+        require_once './views/gioiThieu.php';
+    }
+
+    public function lienHe(){
+        require_once './views/lienHe.php';
+    }
+
     public function getSanPhamHot()
     {
         $listSanPhamHot = $this->modelSanPham->getSanPhamHot();
         return $listSanPhamHot;
+    }
+
+    public function SanPhamTheoDanhMuc() {
+        $idDanhMuc = isset($_GET['id']) ? $_GET['id'] : 0;
+        $listSanPham = $this->modelSanPham->getSanPhamTheoDanhMuc($idDanhMuc);
+        $listDanhMuc = $this->modelDanhMuc->getAllDanhMuc(); // Đảm bảo biến này được thiết lập
+        require_once './views/productSanPham.php';
     }
 
     // public function DanhMuc() {
@@ -301,10 +316,51 @@ class HomeController
         }
     }
 
+    public function logout(){
+        if (isset($_SESSION['user_client'])){
+            unset($_SESSION['user_client']);
+            header("location: ". BASE_URL . '?act=trangchu');
+        }
+    }
+
+
+    public function formSignup(){
+        require_once './views/auth/formLogin.php';
+        deleteSessionError();
+        exit();
+    }
+
+    public function postSignup(){
+        if($_SERVER['REQUEST_METHOD'] == 'POST'){
+            $username = $_POST['username'];
+            $email = $_POST['email'];
+            $password = $_POST['password'];
+
+            //xử lý thông tin lưu trữ
+            $result = $this->modelTaiKhoan->getDangKyTaiKhoan($username, $email, $password);
+            //var_dump($result);die();
+
+            if($result === true){
+                //đăng ký thành công
+                $_SESSION['success'] = "Đăng ký thành công";
+                header("Location: ". BASE_URL . '?act=login');
+                exit();
+            }else{
+                //có lỗi
+                $_SESSION['error'] = $result;
+                $_SESSION['flash'] = true;
+                header("Location: ". BASE_URL . '?act=form-signup');
+                exit();
+            }
+        }
+    }
+
 
     public function trangchu()
     {
-        echo "Đây là trang chủ của tôi";
+        $listSanPham = $this->modelSanPham->getAllSanPham();
+        $listSanPhamHot = $this->modelSanPham->getSanPhamHot();
+        require_once './views/home.php';
     }
 
     // public function danhSachSanPham(){

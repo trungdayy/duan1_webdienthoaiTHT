@@ -27,6 +27,9 @@ match ($act) {
     'trangchu' => (new HomeController())->trangchu(),
     'chi-tiet-san-pham' => (new HomeController())->chiTietSanPham(),
     'san-pham' => (new HomeController())->SanPham(),
+    'gioi-thieu' => (new HomeController())->gioiThieu(),
+    'lien-he' => (new HomeController())->lienHe(),
+    'san-pham-theo-danh-muc' => (new HomeController())->SanPhamTheoDanhMuc(),
 
     'gio-hang' => (new HomeController())->gioHang(),
     'them-gio-hang' => (new HomeController())->addGioHang(),
@@ -40,4 +43,9 @@ match ($act) {
     // login
     'login' => (new HomeController())->formLogin(),
     'check-login' => (new HomeController())->postLogin(),
+    'logout' => (new HomeController())->logout(),
+
+    // signup
+    'form-signup' => (new HomeController())->formSignup(),
+    'check-signup' => (new HomeController())->postSignup(),
 };
