@@ -1,4 +1,9 @@
-<?php require_once 'views/layout/header.php' ?>
+<head>
+    <link rel="stylesheet" href="./LayoutClient/css/trangchu.css">
+    <link rel="stylesheet" href="./LayoutClient/css/details.css">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
 
 <body>
 
@@ -74,10 +79,9 @@
                             <input type="hidden" name="san_pham_id" value="<?= $sanPham['id']; ?>">
                             <label for="quantity">Số Lượng:</label>
                             <div class="quantity">
-                                <input type="number" id="quantity" value="1" min="1" name="so_luong">
+                                <input type="number" id="product-quantity" value="1" min="1" name="so_luong">
                             </div>
                         </div>
-                        
 
                         <hr align="center">
 
@@ -104,18 +108,18 @@
 
                 <div class="color-selection">
 
-                            <div class="capacity-main">
-                                <label for="capacity">Dung Lượng:</label>
-                                <div class="capacity-options">
-                                    <button class="capacity" data-value="128GB">128GB</button>
-                                    <button class="capacity" data-value="256GB">256GB</button>
-                                    <button class="capacity" data-value="512GB">512GB</button>
-                                </div>
-                            </div>
-
-
-
+                    <div class="capacity-main">
+                        <label for="capacity">Dung Lượng:</label>
+                        <div class="capacity-options">
+                            <button class="capacity" data-value="128GB">128GB</button>
+                            <button class="capacity" data-value="256GB">256GB</button>
+                            <button class="capacity" data-value="512GB">512GB</button>
                         </div>
+                    </div>
+
+
+
+                </div>
 
 
 
@@ -153,18 +157,24 @@
                                     </div>
                                 </div>
                             <?php endforeach; ?>
-                            <form action="#" class="review-form">
+
+                            <form action="<?= BASE_URL . '?act=binh-luan&id_sanpham=' . $sanPham['id'] ?>" method="post" class="review-form">
+                                <input type="hidden" name="san_pham_id" value="<?= $sanPham['id']; ?>">
+                                <input type="hidden" name="tai_khoan_id" value="<?= $tai_khoan_id; ?>">
+
                                 <div class="form-group row">
                                     <div class="col">
                                         <label class="col-form-label"><span class="text-danger">*</span>
                                             Nội dung Bình luận</label>
-                                        <textarea class="form-control" required placeholder="Nhập nội dung bình luận sản phẩm"></textarea>
+                                        <textarea class="form-control" required placeholder="Nhập nội dung bình luận sản phẩm" name="noi_dung"></textarea>
                                     </div>
                                 </div>
                                 <div class="buttons">
                                     <button class="btn btn-sqr" type="submit">Bình luận</button>
                                 </div>
-                            </form> <!-- end of review-form -->
+                            </form>
+
+                            <!-- end of review-form -->
                         </div>
                     </div>
                 </div>
@@ -173,7 +183,7 @@
     </div>
     <!-- <div class="container1"> -->
     <h2>Có thể bạn sẽ thích</h2>
-    <div class="product">
+    <div class="product2">
         <?php foreach ($listSanPhamCungDanhMuc as $key => $sanPham): ?>
             <div class="pro-item">
                 <a href="<?= BASE_URL . '?act=chi-tiet-san-pham&id_sanpham=' . $sanPham['id']; ?>">

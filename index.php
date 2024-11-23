@@ -1,5 +1,9 @@
 <?php 
+
 session_start();
+$tai_khoan_id = $_SESSION['tai_khoan_id'] ?? null; // Lấy từ session
+
+
 // Require file Common
 require_once './commons/env.php'; // Khai báo biến môi trường
 require_once './commons/function.php'; // Hàm hỗ trợ
@@ -14,6 +18,7 @@ require_once './models/TaiKhoan.php';
 require_once './models/DanhMuc.php';
 require_once './models/GioHang.php';
 require_once './models/DonHang.php';
+require_once './models/BinhLuan.php';
 
 // Route
 $act = $_GET['act'] ?? '/';
@@ -30,6 +35,9 @@ match ($act) {
     'gioi-thieu' => (new HomeController())->gioiThieu(),
     'lien-he' => (new HomeController())->lienHe(),
     'san-pham-theo-danh-muc' => (new HomeController())->SanPhamTheoDanhMuc(),
+
+    //bình luận
+    'binh-luan' => (new HomeController())->binhLuan(),
 
     'gio-hang' => (new HomeController())->gioHang(),
     'them-gio-hang' => (new HomeController())->addGioHang(),

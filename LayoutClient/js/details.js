@@ -105,4 +105,46 @@
         // Khởi tạo giá ban đầu
         totalPriceElement.textContent = formatNumber(originalPrice) + ' đ';
     });
+
+    // hiệu ứng login
+// Hiển thị dropdown khi nhấn vào icon
+const dropdownIcon = document.querySelector('.dropdown-icon');
+const dropdownMenu = document.querySelector('.dropdown-menu');
+
+// Toggle menu khi click vào icon
+dropdownIcon.addEventListener('click', (e) => {
+    e.stopPropagation(); // Ngăn click lan ra ngoài
+    const isHidden = dropdownMenu.style.display === 'none' || dropdownMenu.style.display === '';
+    dropdownMenu.style.display = isHidden ? 'block' : 'none';
+});
+
+// Ẩn menu khi click ra ngoài
+document.addEventListener('click', () => {
+    dropdownMenu.style.display = 'none';
+});
+
+
+
+// Giá tiền
+document.addEventListener("DOMContentLoaded", function () {
+    const quantityInput = document.getElementById("product-quantity");
+    const totalPriceElement = document.getElementById("total-price");
+    const basePrice = parseInt(totalPriceElement.getAttribute("data-price"), 10);
+
+    // Hàm định dạng số thành dạng tiền VND
+    function formatCurrency(value) {
+        return new Intl.NumberFormat('vi-VN', {
+            style: 'currency',
+            currency: 'VND'
+        }).format(value);
+    }
+
+    // Xử lý khi số lượng thay đổi
+    quantityInput.addEventListener("input", function () {
+        const quantity = parseInt(quantityInput.value, 10) || 1; // Giá trị nhập vào hoặc mặc định là 1
+        const totalPrice = basePrice * quantity; // Tính tổng giá
+        totalPriceElement.textContent = formatCurrency(totalPrice); // Cập nhật giá hiển thị
+    });
+});
+
     

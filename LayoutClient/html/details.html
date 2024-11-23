@@ -18,6 +18,7 @@
                 <li><a href="">Home</a></li>
                 <li><a href="products.html">Products</a></li>
                 <li><a href="">About</a></li>
+                <li><a href="">Support</a></li>
                 <li><a href="">Contact</a></li>
             </ul>
 
@@ -31,12 +32,18 @@
                     </button>
                 </div>
             </form>
-            <a href=""><span class="material-symbols-outlined">person</span></a>
+            <div class="dropdown-container">
+                <span class="material-symbols-outlined dropdown-icon">person</span>
+                <div class="dropdown-menu">
+                    <a href="login.html" class="dropdown-item">Đăng nhập</a>
+                    <a href="#" class="dropdown-item">Thông tin tài khoản</a>
+                    <a href="#" class="dropdown-item">Đăng xuất</a>
+                </div>
+            </div>
             <a href=""><span class="material-symbols-outlined">favorite</span></a>
             <a href=""><span class="material-symbols-outlined">shopping_cart</span></a>
         </div>
     </header>
-
     <div class="container">
         <!-- content-->
         <div class="product-page">
@@ -92,122 +99,154 @@
                     <div class="quantity-main">
                         <label for="quantity">Số Lượng:</label>
                         <div class="quantity">
-                            <input type="number" value="1" min="1">
+                            <input type="number" id="product-quantity" value="1" min="1">
                         </div>
                     </div>
+
+                    <hr align="center">
+
+                    <div class="price" id="total-price" data-price="20490000">20.490.000₫</div>
+
+                    <div class="purchase-buttons">
+                        <div class="buy-now"><button class="buy-now"><i class="fa-solid fa-bag-shopping"></i> Đặt
+                                hàng</button></div>
+                        <button class="add-to-cart">Add to card</button>
+                        <button class="installment">Mua trả góp</button>
+                    </div>
                 </div>
+            </div>
+        </div>
 
-                <hr align="center">
 
-                <div class="price">20.490.000₫</div>
-                <div class="purchase-buttons">
-                    <div class="buy-now"><button class="buy-now"><i class="fa-solid fa-bag-shopping"></i> Đặt
-                            hàng</button></div>
-                    <button class="add-to-cart">Add to card</button>
-                    <button class="installment">Mua trả góp</button>
+        <!-- <div class="container1"> -->
+        <h2>Có thể bạn sẽ thích</h2>
+        <div class="main-item">
+            <div class="item">
+                <div class="img-item">
+                    <img src="../img/fl01.png" alt="">
+                </div>
+                <button class="tenfl">
+                    <div class="tenfl">iPhone 16 VN/A</div>
+                </button>
+                <div class="giafl">Giá từ: 16.490.00đ</div>
+            </div>
+            <div class="item">
+                <div class="img-item">
+                    <img src="../img/fl01.png" alt="">
+                </div>
+                <button class="tenfl">
+                    <div class="tenfl">iPhone 16 Plus VN/A</div>
+                </button>
+                <div class="giafl">Giá từ: 16.490.00đ</div>
+            </div>
+            <div class="item">
+                <div class="img-item">
+                    <img src="../img/fl01.png" alt="">
+                </div>
+                <button class="tenfl">
+                    <div class="tenfl">iPhone 16 Pro VN/A</div>
+                </button>
+                <div class="giafl">Giá từ: 16.490.00đ</div>
+            </div>
+        </div>
+
+        <div class="mota">
+            <div class="mota1">Mô tả</div>
+            <div>Cấu hình sản phẩm</div>
+        </div>
+        <div class="mota-main">
+            <div class="mota-text">
+                <h1 class="title">iPhone 16 Pro Max - Siêu Phẩm Công Nghệ Mới tại THT Shop.</h1>
+                <p>iPhone 16 Pro Max, siêu phẩm mới nhất từ Apple, hứa hẹn mang đến cho người dùng trải nghiệm công nghệ
+                    đỉnh cao với những cải tiến vượt trội. THT Shop tự hào là địa chỉ tin cậy cung cấp iPhone 16 Pro Max
+                    chính hãng với giá tốt nhất tại Việt Nam.</p>
+                <h1>1. Thiết Kế Đẳng Cấp</h1>
+                <p>iPhone 16 Pro Max sở hữu thiết kế hoàn mỹ với viền titan cao cấp, mặt lưng kính nhám chống bám vân
+                    tay, cùng các tuỳ chọn màu sắc sang trọng. Kích thước màn hình lớn 6.9 inch Super Retina XDR OLED
+                    mang đến hình ảnh sắc nét, chân thực đến từng chi tiết.</p>
+                <h1>2. Hiệu Năng Vượt Trội</h1>
+                <p>Được trang bị chip A18 Bionic với công nghệ tiến trình 3nm, iPhone 16 Pro Max có hiệu suất xử lý mạnh
+                    mẽ và tiết kiệm năng lượng tối ưu. RAM 12GB đảm bảo khả năng chạy đa nhiệm mượt mà, trong khi dung
+                    lượng lưu trữ lên đến 1TB giúp bạn thoải mái lưu trữ dữ liệu.</p>
+                <h1>3. Camera Đỉnh Cao</h1>
+                <p>Hệ thống camera của iPhone 16 Pro Max được nâng cấp với cảm biến chính 48MP, hỗ trợ quay video 8K, và
+                    chế độ chụp đêm cải tiến. Camera trước 16MP với công nghệ TrueDepth giúp tạo nên những bức ảnh
+                    selfie và video call chất lượng tuyệt vời.</p>
+                <h1>4. Pin và Sạc Nhanh</h1>
+                <p>Dung lượng pin lớn giúp iPhone 16 Pro Max có thời gian sử dụng liên tục lên đến 29 giờ. Công nghệ sạc
+                    nhanh 35W cho phép bạn sạc đầy 50% pin chỉ trong 30 phút, đảm bảo thiết bị luôn sẵn sàng cho mọi nhu
+                    cầu công việc và giải trí.</p>
+                <h1>5. Mua iPhone 16 Pro Max Chính Hãng tại THT Shop :</h1>
+                <p>THT Shop cam kết mang đến cho khách hàng sản phẩm iPhone 16 Pro Max chính hãng với giá cả cạnh tranh
+                    nhất thị trường Việt Nam. Với đội ngũ nhân viên chuyên nghiệp và dịch vụ khách hàng tận tình, THT
+                    Shop luôn sẵn sàng hỗ trợ khách hàng chọn lựa sản phẩm phù hợp.</p>
+                <h1>Kết luận :</h1>
+                <p>Nếu bạn đang tìm kiếm địa chỉ mua iPhone 16 Pro Max uy tín với giá tốt nhất, hãy ghé ngay THT Shop.
+                    Chúng tôi đảm bảo mang đến cho bạn sản phẩm chất lượng và trải nghiệm mua sắm tuyệt vời.</p>
+
+
+
+            </div>
+            <div class="motaanh">
+                <img src="../img/mota1.png" alt="">
+                <img src="../img/mota2.png" alt="">
+                <img src="../img/mota3.png" alt="">
+                <img src="../img/mota4.png" alt="">
+                <img src="../img/mota5.png" alt="">
+                <img src="../img/mota6.png" alt="">
+            </div>
+        </div>
+        <div class="comment-section">
+            <h3>0 bình luận</h3>
+            <div class="comment-box">
+                <div class="user-avatar">
+                    <img src="../img/thtshop-removebg-preview.png" alt="User Avatar">
+                </div>
+                <textarea placeholder="Bình luận..."></textarea>
+                <button type="button">Đăng</button>
+            </div>
+        </div>
+
+        <div class="quote-box">
+            <blockquote>
+                <p>Đến với THT Shop - Hệ thống bán lẻ sản phẩm Di động chính hãng, Quý khách không những được trải
+                    nghiệm tốt nhất về sản phẩm và dịch vụ của Apple, mà qua cách phục vụ của chúng tôi, Quý khách còn
+                    là những người thân chúng tôi trân quý nhất!</p>
+                <cite>Owner and Founder of THT Shop, Lê Tuấn Tú</cite>
+            </blockquote>
+        </div>
+
+        <!-- footer -->
+        <footer>
+            <div class="container2">
+                <div class="logo">
+                    <img src="../img/thtshop-removebg-preview.png" alt="">
+                    <p>13 P. Trịnh Văn Bô, Xuân Phương,<br>Nam Từ Liêm, Hà Nội</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Sitemap</h3>
+                    <a href="#">Home</a><br>
+                    <a href="#">Shop</a><br>
+                    <a href="#">About</a><br>
+                    <a href="#">Contact</a>
+                </div>
+                <div class="footer-column">
+                    <h3>Help</h3>
+                    <a href="#">Payment Options</a><br>
+                    <a href="#">Returns</a><br>
+                    <a href="#">Privacy Policies</a>
+                </div>
+                <div class="footer-column">
+                    <h3>Location</h3>
+                    <p>trungpldph51651@gmail.com</p>
+                    <p>hieulvph51615@gmail.com</p>
+                    <p>tultph51404@gmail.com</p><br>
                 </div>
             </div>
-        </div>
-    </div>
-
-
-    <!-- <div class="container1"> -->
-    <h2>Có thể bạn sẽ thích</h2>
-    <div class="main-item">
-        <div class="item">
-            <div class="img-item">
-                <img src="../img/fl01.png" alt="">
-            </div>
-            <button class="tenfl">
-                <div class="tenfl">iPhone 16 VN/A</div>
-            </button>
-            <div class="giafl">Giá từ: 16.490.00đ</div>
-        </div>
-        <div class="item">
-            <div class="img-item">
-                <img src="../img/fl01.png" alt="">
-            </div>
-            <button class="tenfl">
-                <div class="tenfl">iPhone 16 Plus VN/A</div>
-            </button>
-            <div class="giafl">Giá từ: 16.490.00đ</div>
-        </div>
-        <div class="item">
-            <div class="img-item">
-                <img src="../img/fl01.png" alt="">
-            </div>
-            <button class="tenfl">
-                <div class="tenfl">iPhone 16 Pro VN/A</div>
-            </button>
-            <div class="giafl">Giá từ: 16.490.00đ</div>
-        </div>
-    </div>
-
-    <div class="mota">
-        <div class="mota1">Mô tả</div>
-        <div>Cấu hình sản phẩm</div>
-    </div>
-    <div class="mota-main">
-        <div class="mota-text">
-            <h1 class="title">iPhone 16 Pro Max - Siêu Phẩm Công Nghệ Mới tại THT Shop.</h1>
-            <p>iPhone 16 Pro Max, siêu phẩm mới nhất từ Apple, hứa hẹn mang đến cho người dùng trải nghiệm công nghệ đỉnh cao với những cải tiến vượt trội. Táo Đen Shop tự hào là địa chỉ tin cậy cung cấp iPhone 16 Pro Max chính hãng với giá tốt nhất tại Việt Nam.</p>
-            <h1>1. Thiết Kế Đẳng Cấp</h1>
-            <p>iPhone 16 Pro Max sở hữu thiết kế hoàn mỹ với viền titan cao cấp, mặt lưng kính nhám chống bám vân tay, cùng các tuỳ chọn màu sắc sang trọng. Kích thước màn hình lớn 6.9 inch Super Retina XDR OLED mang đến hình ảnh sắc nét, chân thực đến từng chi tiết.</p>
-            <h1>2. Hiệu Năng Vượt Trội</h1>
-            <p>Được trang bị chip A18 Bionic với công nghệ tiến trình 3nm, iPhone 16 Pro Max có hiệu suất xử lý mạnh mẽ và tiết kiệm năng lượng tối ưu. RAM 12GB đảm bảo khả năng chạy đa nhiệm mượt mà, trong khi dung lượng lưu trữ lên đến 1TB giúp bạn thoải mái lưu trữ dữ liệu.</p>
-            <h1>3. Camera Đỉnh Cao</h1>
-            <p>Hệ thống camera của iPhone 16 Pro Max được nâng cấp với cảm biến chính 48MP, hỗ trợ quay video 8K, và chế độ chụp đêm cải tiến. Camera trước 16MP với công nghệ TrueDepth giúp tạo nên những bức ảnh selfie và video call chất lượng tuyệt vời.</p>
-            <h1>4. Pin và Sạc Nhanh</h1>
-            <p>Dung lượng pin lớn giúp iPhone 16 Pro Max có thời gian sử dụng liên tục lên đến 29 giờ. Công nghệ sạc nhanh 35W cho phép bạn sạc đầy 50% pin chỉ trong 30 phút, đảm bảo thiết bị luôn sẵn sàng cho mọi nhu cầu công việc và giải trí.</p>
-            <h1>5. Mua iPhone 16 Pro Max Chính Hãng tại THT Shop :</h1>
-            <p>THT Shop cam kết mang đến cho khách hàng sản phẩm iPhone 16 Pro Max chính hãng với giá cả cạnh tranh nhất thị trường Việt Nam. Với đội ngũ nhân viên chuyên nghiệp và dịch vụ khách hàng tận tình, THT Shop luôn sẵn sàng hỗ trợ khách hàng chọn lựa sản phẩm phù hợp.</p>
-            <h1>Kết luận :</h1>
-            <p>Nếu bạn đang tìm kiếm địa chỉ mua iPhone 16 Pro Max uy tín với giá tốt nhất, hãy ghé ngay THT Shop. Chúng tôi đảm bảo mang đến cho bạn sản phẩm chất lượng và trải nghiệm mua sắm tuyệt vời.</p>
-
-            
-
-        </div>
-        <div class="motaanh">
-        <img src="../img/mota1.png" alt="">
-            <img src="../img/mota2.png" alt="">
-            <img src="../img/mota3.png" alt="">
-            <img src="../img/mota4.png" alt="">
-            <img src="../img/mota5.png" alt="">
-            <img src="../img/mota6.png" alt="">
-        </div>
-    </div>
-
-    
-    <!-- footer -->
-    <footer>
-        <div class="container2">
-            <div class="logo">
-                <img src="../img/thtshop-removebg-preview.png" alt="">
-                <p>13 P. Trịnh Văn Bô, Xuân Phương,<br>Nam Từ Liêm, Hà Nội</p>
-            </div>
-            <div class="footer-column">
-                <h3>Sitemap</h3>
-                <a href="#">Home</a><br>
-                <a href="#">Shop</a><br>
-                <a href="#">About</a><br>
-                <a href="#">Contact</a>
-            </div>
-            <div class="footer-column">
-                <h3>Help</h3>
-                <a href="#">Payment Options</a><br>
-                <a href="#">Returns</a><br>
-                <a href="#">Privacy Policies</a>
-            </div>
-            <div class="footer-column">
-                <h3>Location</h3>
-                <p>trungpldph51651@gmail.com</p>
-                <p>hieulvph51615@gmail.com</p>
-                <p>tultph51404@gmail.com</p><br>
-            </div>
-        </div>
-        <hr align="center" /><br>
-        <p3>Bản quyền © 2024 THT Shop.</p3>
-    </footer>
+            <hr align="center" /><br>
+            <p3>Bản quyền © 2024 THT Shop.</p3>
+        </footer>
+        <script src="../js/details.js"></script>
 </body>
 
 </html>

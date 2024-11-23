@@ -314,7 +314,7 @@
                 <h2 class="title">THT Shop | Sing in</h2>
                 <div class="input-field">
                     <i class="fas fa-user"></i>
-                    <input type="text" placeholder="Username or Email" name="email" required>
+                    <input type="text" placeholder="Email" name="email" required>
                 </div>
                 <div class="input-field">
                     <i class="fas fa-lock"></i>
@@ -333,7 +333,7 @@
                         <i class="fab fa-google"></i>
                     </a>
                 </div>
-                <p class="account-text">Quên mật khẩu <a href="#" id="sign-up-btn2">Đăng ký</a></p>
+                <p class="account-text">Quên mật khẩu - <a href="#" id="sign-up-btn2">Đăng ký</a></p>
             </form>
 
 
@@ -370,10 +370,7 @@
                         <i class="fab fa-google"></i>
                     </a>
                 </div>
-                <p class="account-text">
-                    Bạn đã có tài khoản?
-                    <input type="submit" value="Sign in" class="btn">
-                </p>
+                
 
             </form>
         </div>

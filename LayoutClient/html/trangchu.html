@@ -13,13 +13,14 @@
 
 <body>
 
-    <header>
+    <header class="hidden">
         <img src="../img/thtshop-removebg-preview.png" alt="">
         <nav>
             <ul>
-                <li><a href="trangchu.html">Home</a></li>
+                <li><a href="">Home</a></li>
                 <li><a href="products.html">Products</a></li>
-                <li><a href="about.html">About</a></li>
+                <li><a href="">About</a></li>
+                <li><a href="">Support</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
 
@@ -33,16 +34,24 @@
                     </button>
                 </div>
             </form>
-            <a href="login.html"><span class="material-symbols-outlined">person</span></a>
+            <div class="dropdown-container">
+                <span class="material-symbols-outlined dropdown-icon">person</span>
+                <div class="dropdown-menu">
+                    <a href="login.html" class="dropdown-item">Đăng nhập</a>
+                    <a href="#" class="dropdown-item">Thông tin tài khoản</a>
+                    <a href="#" class="dropdown-item">Đăng xuất</a>
+                </div>
+            </div>
             <a href=""><span class="material-symbols-outlined">favorite</span></a>
             <a href=""><span class="material-symbols-outlined">shopping_cart</span></a>
         </div>
+
     </header>
 
 
     <main>
         <!-- banner -->
-        <div class="banner">
+        <div class="banner hidden">
             <div class="slider" id="slider">
                 <div class="slide active">
                     <img src="../img/slider_1.png" alt="Slide 1">
@@ -71,77 +80,45 @@
             </div>
         </div>
 
-
-
         </div>
+
+
         <div class="container">
             <h2>Sản Phẩm Mới</h2>
             <button class="btn2">
-                <h4>View all product</h4>
+                View all product
             </button>
-            <div class="product">
-
-                <div class="pro-item">
-                    <img src="../img/sp01.png" alt="">
-                    <div class="ten">Syltherine</div>
-                    <div class="gia">2.500.000đ</div>
-                    <button class="btn1">Add to card</button>
+            <div class="product-container">
+                <button class="prev-btn">❮</button>
+                <div class="product-wrapper">
+                    <div class="pro-item hidden">
+                        <img src="../img/sp01.png" alt="">
+                        <div class="ten">Syltherine</div>
+                        <div class="gia">2.500.000đ</div>
+                        <button class="btn1">Add to card</button>
+                    </div>
                 </div>
-                <div class="pro-item">
-                    <img src="../img/sp01.png" alt="">
-                    <div class="ten">Syltherine</div>
-                    <div class="gia">2.500.000đ</div>
-                    <button class="btn1">Add to card</button>
-                </div>
-                <div class="pro-item">
-                    <img src="../img/sp01.png" alt="">
-                    <div class="ten">Syltherine</div>
-                    <div class="gia">2.500.000đ</div>
-                    <button class="btn1">Add to card</button>
-                </div>
-                <div class="pro-item">
-                    <img src="../img/sp01.png" alt="">
-                    <div class="ten">Syltherine</div>
-                    <div class="gia">2.500.000đ</div>
-                    <button class="btn1">Add to card</button>
-                </div>
+                <button class="next-btn">❯</button>
             </div>
+
+
             <h2>Sản Phẩm HOT</h2>
             <button class="btn2">View all product</button>
-
-            <div class="product">
-
-                <div class="pro-item">
-                    <img src="../img/sp02.png" alt="">
-                    <div class="ten">Syltherine</div>
-                    <div class="gia">2.500.000đ</div>
-                    <button class="btn1">Add to card</button>
-
+            <div class="product-container-hot">
+                <button class="prev-btn-hot">❮</button>
+                <div class="product-wrapper-hot">
+                    <div class="pro-item hidden">
+                        <img src="../img/sp02.png" alt="">
+                        <div class="ten">Syltherine</div>
+                        <div class="gia">2.500.000đ</div>
+                        <button class="btn1">Add to card</button>
+                    </div>
                 </div>
-                <div class="pro-item">
-                    <img src="../img/sp02.png" alt="">
-                    <div class="ten">Syltherine</div>
-                    <div class="gia">2.500.000đ</div>
-                    <button class="btn1">Add to card</button>
-
-                </div>
-                <div class="pro-item">
-                    <img src="../img/sp02.png" alt="">
-                    <div class="ten">Syltherine</div>
-                    <div class="gia">2.500.000đ</div>
-                    <button class="btn1">Add to card</button>
-
-                </div>
-                <div class="pro-item">
-                    <img src="../img/sp02.png" alt="">
-                    <div class="ten">Syltherine</div>
-                    <div class="gia">2.500.000đ</div>
-                    <button class="btn1">Add to card</button>
-                </div>
+                <button class="next-btn-hot">❯</button>
             </div>
         </div>
 
-        <div class="banner">
+        <div class="banner hidden">
             <img src="../img/section_banner.webp" alt="">
         </div>
 
@@ -151,7 +128,7 @@
                 <h4>View all news</h4>
             </button>
             <div class="product2">
-                <div class="pro-item">
+                <div class="pro-item hidden">
                     <img src="../img/news1.png" alt="">
                     <div class="date">
                         <span><img src="../img/lich.png.png" alt="">
@@ -162,7 +139,7 @@
                     <div class="new"><a href="">Xem chi tiết <img class="imgicon" src="../img/muitenred.png" alt=""></a>
                     </div>
                 </div>
-                <div class="pro-item">
+                <div class="pro-item hidden">
                     <img src="../img/news5.png" alt="">
                     <div class="date">
                         <span><img src="../img/lich.png.png" alt="">
@@ -174,7 +151,7 @@
                     </div>
 
                 </div>
-                <div class="pro-item">
+                <div class="pro-item hidden">
                     <img src="../img/news3.png" alt="">
                     <div class="date">
                         <span><img src="../img/lich.png.png" alt="">
@@ -186,7 +163,7 @@
                     </div>
 
                 </div>
-                <div class="pro-item">
+                <div class="pro-item hidden">
                     <img src="../img/news4.png" alt="">
                     <div class="date">
                         <span><img src="../img/lich.png.png" alt="">
@@ -203,7 +180,7 @@
     </main>
 
 
-    <div class="footer1">
+    <div class="footer1 hidden">
         <div class="icon"><img src="../img/cup.png" alt="">
             <p1>Thương hiệu</p1><br><br>
             <p2>Trên 2 năm tuổi</p2>
@@ -220,7 +197,7 @@
             <!-- <p2>Dưới 10km </p2> -->
         </div>
     </div>
-    <footer>
+    <footer class="hidden">
         <div class="container2">
             <div class="logo">
                 <img src="../img/thtshop-removebg-preview.png" alt="Furniro">
@@ -252,7 +229,6 @@
     </div>
 
     <script src="../js/trangchu.js"></script>
-
 </body>
 
 </html>

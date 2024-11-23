@@ -1,5 +1,5 @@
 <?php 
-
+// session_start();
 class TaiKhoan{
     public $conn;
     public function __construct()
@@ -17,6 +17,8 @@ class TaiKhoan{
             if($user && password_verify($mat_khau,$user['mat_khau'])){
                 if($user['role'] == 0){
                     if($user['trang_thai'] == 1){
+                        $_SESSION['tai_khoan_id'] = $user['id'];
+
                         return $user['email']; //dang nhap thanh cong
                     }else{
                         return "Tài khoản bị cấm!";
