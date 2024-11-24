@@ -42,6 +42,10 @@ class HomeController
         require_once './views/lienHe.php';
     }
 
+    public function thanhToanThanhCong(){
+        require_once "./views/thanhToanThanhCong.php";
+    }
+
     public function getSanPhamHot()
     {
         $listSanPhamHot = $this->modelSanPham->getSanPhamHot();
@@ -321,7 +325,38 @@ class HomeController
     }
 
     public function chiTietMuaHang(){
+        if(isset($_SESSION['user_client'])){
+            $user = $this->modelTaiKhoan->getTaiKhoanFromEmail($_SESSION['user_client']);
+            $tai_khoan_id = $user['id'];
 
+            //lấy id đơn hàng truyền từ URL
+            $donHangId = $_GET['id'];
+
+            $arrTrangThaiDonHang = $this->modelDonHang->getTrangThaiDonHang();
+            $trangThaiDonHang = array_column($arrTrangThaiDonHang, 'ten_trang_thai', 'id');
+
+            $arrPhuongThucThanhToan = $this->modelDonHang->getPhuongThucThanhToan();
+            $phuongThucThanhToan = array_column($arrPhuongThucThanhToan, 'ten_phuong_thuc', 'id');
+
+            //lấy ra thông tin đơn hàng theo id
+            $donHang = $this->modelDonHang->getDonHangById($donHangId);
+
+            //lấy thông tin sản phẩm 
+            $chiTietDonHang = $this->modelDonHang->getChiTietDonHangByDonHangId($donHangId);
+
+            // echo "<pre>";
+            // print_r($donHang);
+            // print_r($chiTietDonHang);
+
+            if($donHang['tai_khoan_id'] != $tai_khoan_id){
+                echo "Bạn không có quyền truy cập đơn hàng này";
+                exit();
+            }
+            require_once "./views/chiTietMuaHang.php";
+        }else{
+            var_dump("Bạn chưa đăng nhập");
+            die();
+        }
     }
 
     public function huyDonHang(){

@@ -12,7 +12,7 @@
         <!-- Form thông tin nhận hàng -->
         <div class="checkout-form">
             <h2>Thông tin nhận hàng</h2>
-            <form action="<?= BASE_URL . '?act=xu-ly-thanh-toan' ?>" method="post">
+            <form action="<?= BASE_URL . '?act=thanh-toan-thanh-cong' ?>" method="post">
                 <div class="single-input-item">
                     <label for="ten_nguoi_nhan" class="required">Tên người nhận:</label>
                     <input type="text" id="ten_nguoi_nhan" name="ten_nguoi_nhan" value="<?= $user['hoten'] ?>" placeholder="Tên người nhận" required>

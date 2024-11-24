@@ -106,4 +106,21 @@ class DonHang{
             echo "Loi: ". $e->getMessage();
         }
     }
+
+    public function getChiTietDonHangByDonHangId($donHangId){
+        try{
+            $sql = "SELECT 
+                chi_tiet_don_hang.*,
+                sanpham.ten_sp,
+                sanpham.hinh
+            FROM chi_tiet_don_hang 
+            JOIN sanpham ON chi_tiet_don_hang.san_pham_id = sanpham.id
+            WHERE chi_tiet_don_hang.don_hang_id = :don_hang_id";
+            $stmt = $this->conn->prepare($sql);
+            $stmt->execute([':don_hang_id' => $donHangId]);
+            return $stmt->fetchAll();
+        }catch (Exception $e) {
+            echo "Loi" . $e->getMessage();
+        }
+    }
 }
