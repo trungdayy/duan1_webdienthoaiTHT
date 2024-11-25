@@ -77,12 +77,17 @@
                     <form action="<?= BASE_URL . '?act=them-gio-hang' ?>" method="post">
                         <div class="quantity-main">
                             <input type="hidden" name="san_pham_id" value="<?= $sanPham['id']; ?>">
-                            <label for="quantity">Số Lượng:</label>
+                            <label for="product-quantity">Số Lượng:</label>
                             <div class="quantity">
                                 <input type="number" id="product-quantity" value="1" min="1" name="so_luong">
                             </div>
                         </div>
 
+                        <div id="total-price" data-price="<?= $sanPham['gia']; ?>">
+                            <?= formatNumber($sanPham['gia']) ?> đ
+                        </div>
+
+                        <div id="error-message" style="color: red; display: none;"></div>
                         <hr align="center">
 
 
@@ -227,9 +232,10 @@
 
     </div>
 
+    <script src="./LayoutClient/js/trangchu.js"></script>
     <script src="./LayoutClient/js/details.js"></script>
 
-    <?php require_once 'views/layout/footer.php' ?>
+    <?php require_once 'views/layout/footer.php' ?>    
 </body>
 
 </html>

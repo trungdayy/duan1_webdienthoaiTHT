@@ -293,8 +293,8 @@ class HomeController
                 //xóa thông tin giỏ hàng người dùng
                 $this->modelGioHang->clearGioHang($tai_khoan_id);
 
-                // header("Location: " . BASE_URL . '?act=lich-su-mua-hang');
-                // exit();
+                header("Location: " . BASE_URL . '?act=thanh-toan-thanh-cong');
+                exit();
             }else{
                 var_dump('Thêm đơn hàng thất bại');
                 die();

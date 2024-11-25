@@ -360,6 +360,7 @@ nav ul li a:hover {
 .product h4 {
     font-size: 1.1em;
     margin-top: 10px;
+    text-decoration: none;
 }
 
 .product p {

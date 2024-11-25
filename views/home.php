@@ -35,11 +35,11 @@
     <div class="container">
         <h2>Sản Phẩm Mới</h2>
         <button class="btn2">
-            <h4>View all product</h4>
+            <h4>View all</h4>
         </button>
         <div class="product-container">
             <button class="prev-btn">❮</button>
-            <div class="product-wrapper">
+            <div class="product-wrapper hidden">
                 <?php foreach ($listSanPham as $key => $sanPham): ?>
                     <div class="pro-item">
                         <a href="<?= BASE_URL . '?act=chi-tiet-san-pham&id_sanpham=' . $sanPham['id']; ?>">
@@ -88,7 +88,7 @@
     <div class="container">
         <h2>Sản Phẩm Hot</h2>
         <button class="btn2">
-            <h4>View all product</h4>
+            <h4>View all</h4>
         </button>
         <div class="product-container-hot">
             <button class="prev-btn-hot">❮</button>
@@ -120,9 +120,9 @@
 
         <h2>Tin tức</h2>
         <button class="btn2">
-            <h4>View all news</h4>
+            <h4>View all</h4>
         </button>
-        <div class="product2">
+        <div class="product2 hidden">
             <div class="pro-item">
                 <img src="./LayoutClient/img/news1.png" alt="">
                 <div class="date">

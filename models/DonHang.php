@@ -43,6 +43,7 @@ class DonHang{
                 ':so_luong' => $soLuong,
                 ':thanh_tien' => $thanhTien
             ]);
+            return true;
         }catch(PDOException $e){
             echo "Loi: ". $e->getMessage();
         }
