@@ -295,6 +295,37 @@ hr{
 .checkout-btn:hover{
     background: orangered;
 }
+/* mã qr */
+#atm-qr-code {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #f8f8f8;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    text-align: center;
+    display: none; /* Ẩn mặc định, sẽ hiển thị khi chọn thanh toán qua ngân hàng */
+}
+
+#atm-qr-code h3 {
+    color: #333;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+#atm-qr-code p {
+    color: #555;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+#qr-code img {
+    width: 150%; /* Đảm bảo hình ảnh luôn rộng bằng 100% chiều rộng container */
+    max-width: 250px; /* Giới hạn chiều rộng tối đa để hình ảnh không quá lớn */
+    height: auto; /* Giữ tỷ lệ gốc của hình ảnh */
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
 /* footer */
 footer {
     background-color: #333;

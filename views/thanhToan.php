@@ -1,5 +1,6 @@
 <head>
     <link rel="stylesheet" href="./LayoutClient/css/payment.css">
+    <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
 </head>
 
 <?php require_once 'views/layout/header.php' ?>
@@ -31,7 +32,7 @@
                 </div>
                 <div class="single-input-item">
                     <label for="ghi_chu" class="required">Ghi chú:</label>
-                    <textarea name="ghi_chu" id="ghi_chu" placeholder="Ghi chú đơn hàng của bạn" required></textarea>
+                    <textarea name="ghi_chu" id="ghi_chu" placeholder="Ghi chú đơn hàng của bạn"></textarea>
                 </div>
 
         </div>
@@ -48,9 +49,19 @@
                     Thanh toán khi nhận hàng (COD)
                 </label>
                 <label>
-                    <input type="radio" name="phuong_thuc_thanh_toan_id" value="2" checked>
+                    <input type="radio" name="phuong_thuc_thanh_toan_id" value="2">
                     Thanh toán qua ngân hàng (ATM)
                 </label>
+            </div>
+
+            <div id="atm-qr-code" style="display: none;">
+                <h3>Thanh toán qua ngân hàng</h3>
+                <div id="qr-code">
+                    <img src="./LayoutClient/img/maqr.jpg" alt="">
+                </div>
+                <p>Ngân hàng: Vietcombank</p>
+                <p>Chủ tài khoản: Lê Văn Hiếu</p>
+                <p>Số tài khoản: 1036512474</p>
             </div>
         </div>
 
