@@ -12,7 +12,6 @@ require_once './commons/function.php'; // Hàm hỗ trợ
 require_once './controllers/HomeController.php';
 
 // Require toàn bộ file Models
-require_once './models/Student.php';
 require_once './models/SanPham.php';
 require_once './models/TaiKhoan.php';
 require_once './models/DanhMuc.php';

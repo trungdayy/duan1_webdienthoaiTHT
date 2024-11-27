@@ -163,6 +163,12 @@
                                 </div>
                             <?php endforeach; ?>
 
+                            <?php
+                            if(isset($_SESSION['user_client'])){
+                                $tai_khoan_id = $_SESSION['user_client'];
+                            
+                            ?>
+
                             <form action="<?= BASE_URL . '?act=binh-luan&id_sanpham=' . $sanPham['id'] ?>" method="post" class="review-form">
                                 <input type="hidden" name="san_pham_id" value="<?= $sanPham['id']; ?>">
                                 <input type="hidden" name="tai_khoan_id" value="<?= $tai_khoan_id; ?>">
@@ -178,6 +184,12 @@
                                     <button class="btn btn-sqr" type="submit">Bình luận</button>
                                 </div>
                             </form>
+
+                            <?php 
+                            }else{
+                                echo '<p class="alert alert-warning">Bạn cần đăng nhập thì mới có thể bình luận. <a href="' . BASE_URL . '?act=login">Đăng nhập tại đây</a></p>';
+                            }
+                            ?>
 
                             <!-- end of review-form -->
                         </div>

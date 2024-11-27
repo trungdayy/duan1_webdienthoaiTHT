@@ -82,3 +82,19 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 });
+
+function changeMainImage(thumbnail) {
+    // Lấy đường dẫn của ảnh được click
+    const newImageSrc = thumbnail.src;
+
+    // Tìm phần tử ảnh chính
+    const mainImage = document.querySelector('.img-main img');
+
+    // Cập nhật ảnh chính với đường dẫn mới
+    if (mainImage) {
+        mainImage.src = newImageSrc;
+    } else {
+        console.error('Không tìm thấy phần tử ảnh chính!');
+    }
+}
+
