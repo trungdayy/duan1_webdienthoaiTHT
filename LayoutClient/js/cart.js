@@ -46,14 +46,10 @@ document.addEventListener('DOMContentLoaded', () => {
     // Thư viện tạo QR code (dùng thư viện qrcode.js)
     function generateQRCode(paymentDetails) {
         // Cấu hình QR Code
-        const qrCode = new QRCode(qrCodeContainer, {
-            text: paymentDetails, // Thông tin thanh toán ngân hàng
-            width: 128,
-            height: 128,
-            colorDark: "#000000",
-            colorLight: "#ffffff",
-            correctLevel: QRCode.CorrectLevel.H
-        });
+        // const qrCode = new QRCode(qrCodeContainer, {
+        //     text: paymentDetails, // Thông tin thanh toán ngân hàng
+        //     correctLevel: QRCode.CorrectLevel.H
+        // });
     }
 
     // Hiển thị/ẩn mã QR dựa trên phương thức thanh toán

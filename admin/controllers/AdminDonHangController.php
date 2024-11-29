@@ -9,6 +9,11 @@ class AdminDonHangController {
     }
     public function danhSachDonHang() {
         $listDonHang = $this->modelDonHang->getAllDonHang();
+
+        //sắp xếp đơn hàng theo ngày đặt
+        usort($listDonHang, function($a, $b){
+            return strtotime($b['ngay_dat']) - strtotime($a['ngay_dat']);
+        });
         require_once './views/donhang/listDonHang.php';
     }
 

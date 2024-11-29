@@ -99,9 +99,9 @@
                             <img src="<?= BASE_URL . $sanPham['hinh'] ?>" alt="">
                         </a>
 
-                        <div class="ten"><?= $sanPham['ten_sp'] ?></div>
-                        <div class="gia"><?= formatNumber($sanPham['gia']) ?> đ</div>
+                        <div class="ten"><?= $sanPham['ten_sp'] ?></div>                  
                         <div class="giamgia"><?= formatNumber($sanPham['giam_gia']) ?> đ</div>
+                        <div class="gia"><?= formatNumber($sanPham['gia']) ?> đ</div>
 
                         <button class="btn1" onclick="location.href='<?= BASE_URL . '?act=chi-tiet-san-pham&id_sanpham=' . $sanPham['id']; ?>'">
                             Xem chi tiết

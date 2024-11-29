@@ -252,6 +252,10 @@ class HomeController
             //var_dump($ngay_dat);die();
             $trang_thai_id = 1;
 
+            if($phuong_thuc_thanh_toan_id == 2){
+                $trang_thai_id = 2; //hiển thị đã thanh toán
+            }
+
             $user = $this->modelTaiKhoan->getTaiKhoanFromEmail($_SESSION['user_client']);
             $tai_khoan_id = $user['id'];
 
