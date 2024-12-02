@@ -74,6 +74,16 @@
                 </div>
                 <ul class="promotion-details">
                     <?= $sanPham['mo_ta'] ?>
+                    <div class="color-selection">
+                    <div class="capacity-main">
+                        <label for="capacity">Dung Lượng:</label>
+                        <div class="capacity-options">
+                            <button class="capacity" data-value="128GB">128GB</button>
+                            <button class="capacity" data-value="256GB">256GB</button>
+                            <button class="capacity" data-value="512GB">512GB</button>
+                        </div>
+                    </div>
+                </div>
                     <form action="<?= BASE_URL . '?act=them-gio-hang' ?>" method="post">
                         <div class="quantity-main">
                             <input type="hidden" name="san_pham_id" value="<?= $sanPham['id']; ?>">
@@ -83,19 +93,18 @@
                             </div>
                         </div>
 
-                        <div id="total-price" data-price="<?= $sanPham['gia']; ?>">
-                            <?= formatNumber($sanPham['gia']) ?> đ
-                        </div>
+                        
 
                         <div id="error-message" style="color: red; display: none;"></div>
                         <hr align="center">
 
-
                         <div class="price">
                             <div class="giamgia" id="discount-price"><?= formatNumber($sanPham['giam_gia']) ?> đ</div>
-                            <div class="gia" id="original-price"><?= formatNumber($sanPham['gia']) ?> đ</div>
-
+                            <div id="total-price" data-price="<?= $sanPham['gia']; ?>">
+                            <?= formatNumber($sanPham['gia']) ?> đ
                         </div>
+                        </div>
+
                         <div class="purchase-buttons">
                             <div class="buy-now">
                                 <button class="buy-now">
@@ -111,20 +120,7 @@
                     <!-- Add other list items here -->
                 </ul>
 
-                <div class="color-selection">
-
-                    <div class="capacity-main">
-                        <label for="capacity">Dung Lượng:</label>
-                        <div class="capacity-options">
-                            <button class="capacity" data-value="128GB">128GB</button>
-                            <button class="capacity" data-value="256GB">256GB</button>
-                            <button class="capacity" data-value="512GB">512GB</button>
-                        </div>
-                    </div>
-
-
-
-                </div>
+                
 
 
 

@@ -170,6 +170,9 @@ header img{
 .banner {
     position: relative; /* Cần có position để z-index hoạt động */
     z-index: 1; /* Giá trị thấp hơn dropdown */
+    margin-bottom: 20px;
+
+    
 }
 
 .slider {
@@ -274,7 +277,7 @@ nav ul {
     
 }
 h2{
-    margin: 15px 20px;
+    margin: 20px 20px;
 }
 
 nav ul li{
@@ -306,6 +309,7 @@ nav ul li a:hover{
     text-align: center;
     background: #fff;
     border-radius: 5px;
+    font-size: 14px;
 }
 .btn2:hover{
     background-color: orange;
@@ -509,6 +513,7 @@ nav ul li a:hover{
     color: orange;
     background: #fff;
     border-radius: 5px;
+    line-height: 10px;
 }
 .btn1:hover{
     background-color: orange;
